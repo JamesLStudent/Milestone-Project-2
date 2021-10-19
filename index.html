@@ -11,8 +11,8 @@
     <title>RPSLS Game</title>
 </head>
 <body>
-    <h1>RPSLS Game</h1>
-    <form>
+        <h1>RPSLS Game</h1>
+    <form id="game-form" action="" method="POST" onsubmit="roll(event)">
         <label for="rock">rock</label>
         <input name="GameButton" id="rock" value="Rock" type="radio">
         <label for="paper">paper</label>
@@ -23,7 +23,7 @@
         <input name="GameButton" id="lizard" value="Lizard" type="radio">
         <label for="spock">spock</label>
         <input name="GameButton" id="spock" value="Spock" type="radio">
-        <input type="submit" value="Go!">
+        <input type="submit" id="submit" value="Go!">
     </form>
     <aside>
         <p>score:<span id="score"></span></p>
