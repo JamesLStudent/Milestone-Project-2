@@ -57,11 +57,62 @@ function draw(){
 }
 
 function checkResults(){
-    if (result == computerResult){
-        draw();
-    } else if(result < computerResult){
-        win();
-    }else if(result > computerResult){
-        lose();
+    if (result == computerResult){      //if player and computer choose the same
+        draw();                         //it's a draw
+    }
+    if(result==0){                      //if player chooses rock
+        if(computerResult==2){          //if computer chooses scissors
+            win();                      //player wins
+        } else if (computerResult==3){  //if computer chose lizard
+            win();                      //player wins
+        } else if (computerResult==1){  //if computer chose paper
+            lose();                     //player loses
+        } else if (computerResult==4){  //if computer chose spock
+            lose();                     //player loses
+        }
+    }
+    if(result==1){                      //if player chooses paper
+        if(computerResult==2){          //if computer chooses scissors
+            lose();                     //player loses
+        } else if (computerResult==3){  //if computer chose lizard
+            lose();                     //player loses
+        } else if (computerResult==0){  //if computer chose rock
+            win();                      //player wins
+        } else if (computerResult==4){  //if computer chose spock
+            win();                      //player wins
+        }
+    }
+    if(result==2){                      //if player chooses scissors
+        if(computerResult==1){          //if computer chooses paper
+            win();                      //player wins
+        } else if (computerResult==3){  //if computer chose lizard
+            win();                      //player wins
+        } else if (computerResult==0){  //if computer chose rock
+            lose();                     //player loses
+        } else if (computerResult==4){  //if computer chose spock
+            lose();                     //player loses
+        }
+    }
+    if(result==3){                      //if player chooses lizard
+        if(computerResult==2){          //if computer chooses scissors
+            lose();                     //player loses
+        } else if (computerResult==1){  //if computer chose paper
+            win();                      //player wins
+        } else if (computerResult==0){  //if computer chose rock
+            lose();                     //player loses
+        } else if (computerResult==4){  //if computer chose spock
+            win();                      //player wins
+        }
+    }
+    if(result==4){                      //if player chooses spock
+        if(computerResult==2){          //if computer chooses scissors
+            win();                      //player wins
+        } else if (computerResult==3){  //if computer chose lizard
+            lose();                     //player loses
+        } else if (computerResult==0){  //if computer chose rock
+            win();                      //player wins
+        } else if (computerResult==1){  //if computer chose paper
+            lose();                      //player loses
+        }
     }
 }
