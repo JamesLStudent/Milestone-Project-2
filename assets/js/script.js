@@ -1,7 +1,8 @@
+let computerResult = "";
 function roll(event){
     event.preventDefault();
-    let computerResult=Math.floor(Math.random()*5); //Generates a number between 0-4
-    console.log(computerResult)
+    computerResult = Math.floor(Math.random()*5); //Generates a number between 0-4
+    console.log(computerResult);
     playerAnswer();
 }
 let gameForm = document.getElementsByTagName('input');
@@ -13,23 +14,49 @@ caused <label>s to fire the same event as <input>s upon
 submit, causing two events where only one was warranted.
 This bug was solved thanks to users on Stack Overflow,
 linked in the README */
-
+let result = "";
 function playerAnswer(){
     if(document.getElementById('rock').checked) {
-        console.log('rock');
+        result = 0;
+        checkResults()
     } else if(document.getElementById('paper').checked) {
-          console.log('paper');
+        result = 1;
+        checkResults()
     } else if(document.getElementById('scissors').checked) {
-        console.log('scissors');
+        result = 2;
+        checkResults()
     } else if(document.getElementById('lizard').checked) {
-        console.log('lizard');
+        result = 3;
+        checkResults()
     } else if(document.getElementById('spock').checked) {
-        console.log('spock');
+        result = 4;
+        checkResults()
     }
 }
 
-/* The above code checks the player's input and responds
-accordingly. Currently, it only logs to the console, but
-in a future version, I'll use it to compare the player's
-answer to the computer's to see who wins.
+/* The above code checks the player's selection and responds
+accordingly.
 */
+let divResult = document.getElementById('results-box').innerHTML; //finds an empty <div>
+
+function win(){
+    divResult = "Win!"; //Changes the <div>'s content to say Win!
+}
+
+function lose(){
+    divResult = "Lose!"; //Changes the <div>'s content to say Lose!
+}
+
+function draw(){
+    divResult = "Draw!"; //Changes the <div>'s content to say Draw!
+}
+
+function checkResults(){
+    if (result == computerResult){
+        draw();
+    } else if(result < computerResult){
+        win();
+    }else if(result > computerResult){
+        lose();
+    }
+}
