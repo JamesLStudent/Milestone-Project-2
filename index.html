@@ -12,11 +12,19 @@
 </head>
 <body>
     <h1>RPSLS Game</h1>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-    <button id="lizard">Lizard</button>
-    <button id="spock">Spock</button>
+    <form>
+        <label for="rock">rock</label>
+        <input name="GameButton" id="rock" value="Rock" type="radio">
+        <label for="paper">paper</label>
+        <input name="GameButton" id="paper" value="Paper" type="radio">
+        <label for="scissosr">scissors</label>
+        <input name="GameButton" id="scissors" value="Scissors" type="radio">
+        <label for="lizard">lizard</label>
+        <input name="GameButton" id="lizard" value="Lizard" type="radio">
+        <label for="spock">spock</label>
+        <input name="GameButton" id="spock" value="Spock" type="radio">
+        <input type="submit" value="Go!">
+    </form>
     <aside>
         <p>score:<span id="score"></span></p>
         <p>difficulty:<span id="difficulty"></span></p>
