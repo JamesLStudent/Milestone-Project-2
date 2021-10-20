@@ -1,12 +1,14 @@
+//----------------------------------- Event Listener and initial Roll
+
 let computerResult = "";
 function roll(event){
     event.preventDefault();
-    computerResult = Math.floor(Math.random()*5); //Generates a number 0-4
+    computerResult = Math.floor(Math.random()*5); //Generates a number 0-4 and calls it computerResult
     console.log('computer value: '+computerResult);
-    play();                               //checks player's choice
+    play();                               //runs the code to play the game
 }
-let gameForm = document.getElementsByTagName('input');
-gameForm[0,1,2,3,4].addEventListener('submit', roll);
+let gameForm = document.getElementsByTagName('input');      //event listener waiting for the
+gameForm[0,1,2,3,4].addEventListener('submit', roll);       //submit button to get pressed
 
 /* note that gameForm targets <input> elements instead
 of the <form>. This is because targetting the <form>
@@ -15,10 +17,14 @@ submit, causing two events where only one was warranted.
 This bug was solved thanks to users on Stack Overflow,
 linked in the README */
 
+
+//------------------------------- Play function and the functions it calls
+
+
 function play(){
-    playerAnswer();
-    checkResults();
-    checkDifficulty();
+    playerAnswer();         //determines player choice
+    checkResults();         //checks against comp results to find win or loss
+    checkDifficulty();      //lets the comp pick again if it lost and difficulty is >0
 }
 
 let result = "";
@@ -39,78 +45,6 @@ function playerAnswer(){
         result = 4;
         console.log('player value: ' + result);
     }
-}
-
-/* The above code checks the player's selection and assigns it a value
-called 'result' which is later compared to 'computerResult' to see who
-wins
-*/
-
-let compOptions = ["rock", "paper", "scissors", "lizard", "spock"];
-/* rock = 0
-paper = 1
-scissors = 2
-lizard = 3
-spock = 4 */
-let resultsBox = document.getElementById('results-box');
-let score = document.getElementById('score'); //score gets a <span>, used with totalScore
-let totalScore = 0;          //totalscore tracks total wins, used in win() function
-let difficulty = 0;
-let winLose = "";                           //winLose is used with the whoWins and checkResults 
-                                            //function to determinewhether the player  or
-function whoWins(){                         //computer won the game
-	if (result == computerResult){
-		draw();
-	} else if (winLose==0){
-		win();
-	} else if (winLose==1){
-		lose();
-	}
-}
-
-function rollAgain(){
-    computerResult = Math.floor(Math.random()*5);
-    console.log("computer's reroll value: "+computerResult);
-}
-
-function checkDifficulty(){         //this code should let the computer reroll if it loses
-    if(difficulty == 0){            //a number of times according to the difficulty to  
-            whoWins();              //potentially pick a winning number
-    } else if(difficulty == 1){
-        if(winLose == 0){
-            rollAgain();
-            checkResults();
-        }
-        whoWins();
-    } else if(difficulty >= 2){
-        if(winLose==0){
-            rollAgain();
-            checkResults();
-            if(winLose==0){
-                rollAgain();
-                checkResults();
-            }
-        }
-        whoWins();
-    }
-}
-
-function win(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you win!";
-    //Changes the <div>'s content to say what computer picked and that you won!
-    totalScore++
-    score.innerHTML = totalScore;
-    difficulty++
-}
-
-function lose(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you lost!";
-    //Changes the <div>'s content to say what computer picked and that you Lose!
-}
-
-function draw(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + " too! you draw!";
-    //Changes the <div>'s content to say what computer picked and that you Draw!
 }
 
 function checkResults(){
@@ -170,3 +104,86 @@ function checkResults(){
         }
     }
 }
+
+let difficulty = 0;
+function checkDifficulty(){         //this code should let the computer reroll if it loses
+    if(difficulty == 0){            //a number of times according to the difficulty to  
+            whoWins();              //potentially pick a winning number
+    } else if(difficulty == 1){
+        if(winLose == 0){
+            rollAgain();
+            checkResults();
+        }
+        whoWins();
+    } else if(difficulty >= 2){
+        if(winLose==0){
+            rollAgain();
+            checkResults();
+            if(winLose==0){
+                rollAgain();
+                checkResults();
+            }
+        }
+        whoWins();
+    }
+}
+
+let winLose = "";                     //winLose is used with the whoWins and checkResults
+function whoWins(){                   //function to determine whether the player  or
+	if (result == computerResult){    //computer won the game
+		draw();
+	} else if (winLose==0){
+		win();
+	} else if (winLose==1){
+		lose();
+	}
+}
+
+function rollAgain(){
+    computerResult = Math.floor(Math.random()*5);
+    console.log("computer's reroll value: "+computerResult);
+}
+
+
+//------------------------------------- Win, Lose and Draw functions
+
+
+let compOptions = ["rock", "paper", "scissors", "lizard", "spock"];
+/* rock = 0
+paper = 1
+scissors = 2
+lizard = 3
+spock = 4 */
+let resultsBox = document.getElementById('results-box');
+let scoreSpan = document.getElementById('score'); //scoreSpan gets a <span>, used with totalScore
+let totalScore = 0;          //totalScore tracks total wins, used in win() function with highScore
+let currentScore= 0;
+let highScore = document.getElementById('high-score');
+
+function win(){
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you win!";
+    //Changes the <div>'s content to say what computer picked and that you won!
+    if(totalScore == currentScore){
+        totalScore++
+    }
+    highScore.innerHTML = totalScore;
+    currentScore++
+    scoreSpan.innerHTML = currentScore;
+    difficulty++
+}
+
+function lose(){
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you lost!";
+    //Changes the <div>'s content to say what computer picked and that you Lose!
+    currentScore--
+    if (currentScore < 0){
+        currentScore = 0;
+    }
+    scoreSpan.innerHTML = currentScore;
+}
+
+function draw(){
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + " too! you draw!";
+    //Changes the <div>'s content to say what computer picked and that you Draw!
+}
+
