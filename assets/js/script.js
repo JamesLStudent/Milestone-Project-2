@@ -43,17 +43,17 @@ function playerAnswer(){
 /* The above code checks the player's selection and responds
 accordingly.
 */
-
+let compOptions = ["rock", "paper", "scissors", "lizard", "spock"];
 function win(){
-    document.getElementById('results-box').innerHTML = "Win!"; //Changes the <div>'s content to say Win!
+    document.getElementById('results-box').innerHTML = "comp picked " + compOptions[computerResult] + "! you win!"; //Changes the <div>'s content to say what computer picked and that you won
 }
 
 function lose(){
-    document.getElementById('results-box').innerHTML = "Lose!"; //Changes the <div>'s content to say Lose!
+    document.getElementById('results-box').innerHTML = "comp picked " + compOptions[computerResult] + "! you lost!"; //Changes the <div>'s content to say Lose!
 }
 
 function draw(){
-    document.getElementById('results-box').innerHTML = "Draw!"; //Changes the <div>'s content to say Draw!
+    document.getElementById('results-box').innerHTML = "comp picked " + compOptions[computerResult] + " too! you draw!"; //Changes the <div>'s content to say Draw!
 }
 
 function checkResults(){
