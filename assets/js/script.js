@@ -9,7 +9,7 @@ let gameForm = document.getElementsByTagName('input');
 gameForm[0,1,2,3,4].addEventListener('submit', roll);
 
 /* note that gameForm targets <input> elements instead
-of the <form> now. This is because targetting the <form>
+of the <form>. This is because targetting the <form>
 caused <label>s to fire the same event as <input>s upon
 submit, causing two events where only one was warranted.
 This bug was solved thanks to users on Stack Overflow,
@@ -43,22 +43,26 @@ function playerAnswer(){
 /* The above code checks the player's selection and responds
 accordingly.
 */
+
 let compOptions = ["rock", "paper", "scissors", "lizard", "spock"];
 let resultsBox = document.getElementById('results-box');
 let score = document.getElementById('score');
 let totalScore = 0;
 function win(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you win!"; //Changes the <div>'s content to say what computer picked and that you won
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you win!";
+    //Changes the <div>'s content to say what computer picked and that you won!
     totalScore++
     score.innerHTML = totalScore;
 }
 
 function lose(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you lost!"; //Changes the <div>'s content to say Lose!
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you lost!";
+    //Changes the <div>'s content to say what computer picked and that you Lose!
 }
 
 function draw(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + " too! you draw!"; //Changes the <div>'s content to say Draw!
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + " too! you draw!";
+    //Changes the <div>'s content to say what computer picked and that you Draw!
 }
 
 function checkResults(){
@@ -121,3 +125,4 @@ function checkResults(){
         }
     }
 }
+

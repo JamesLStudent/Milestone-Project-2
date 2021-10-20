@@ -11,25 +11,38 @@
     <title>RPSLS Game</title>
 </head>
 <body>
+    <main>
         <h1>RPSLS Game</h1>
-    <form id="game-form" action="" method="POST" onsubmit="roll(event)">
-        <label for="rock">rock</label>
-        <input name="GameButton" id="rock" value="Rock" type="radio">
-        <label for="paper">paper</label>
-        <input name="GameButton" id="paper" value="Paper" type="radio">
-        <label for="scissosr">scissors</label>
-        <input name="GameButton" id="scissors" value="Scissors" type="radio">
-        <label for="lizard">lizard</label>
-        <input name="GameButton" id="lizard" value="Lizard" type="radio">
-        <label for="spock">spock</label>
-        <input name="GameButton" id="spock" value="Spock" type="radio">
-        <input type="submit" id="submit" value="Go!">
-    </form>
-    <div id="results-box"></div>
-    <aside>
+        <form id="game-form" action="" method="POST" onsubmit="roll(event)">
+            <label for="rock">rock</label>
+            <input name="GameButton" id="rock" value="Rock" type="radio">
+            <label for="paper">paper</label>
+            <input name="GameButton" id="paper" value="Paper" type="radio">
+            <label for="scissosr">scissors</label>
+            <input name="GameButton" id="scissors" value="Scissors" type="radio">
+            <label for="lizard">lizard</label>
+            <input name="GameButton" id="lizard" value="Lizard" type="radio">
+            <label for="spock">spock</label>
+            <input name="GameButton" id="spock" value="Spock" type="radio">
+            <input type="submit" id="submit" value="Go!">
+        </form>
+        <div id="results-box"></div>
+    </main>
+    <aside id="number-tracker">
         <p>score:<span id="score">0</span></p>
         <p>difficulty:<span id="difficulty"></span></p>
     </aside>
+    <section id="rules">
+        <p>
+            Rock beats Scissors and Lizard<br>
+            Paper beats Rock and Spock<br>
+            Scissors beats Paper and Lizard<br>
+            Lizard beats Spock and Paper<br>
+            Spock beats Scissors and Rock<br>
+            <br>
+            Pick your favourite and hit Go to play!
+        </p>
+    </section>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
