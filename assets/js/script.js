@@ -44,16 +44,21 @@ function playerAnswer(){
 accordingly.
 */
 let compOptions = ["rock", "paper", "scissors", "lizard", "spock"];
+let resultsBox = document.getElementById('results-box');
+let score = document.getElementById('score');
+let totalScore = 0;
 function win(){
-    document.getElementById('results-box').innerHTML = "comp picked " + compOptions[computerResult] + "! you win!"; //Changes the <div>'s content to say what computer picked and that you won
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you win!"; //Changes the <div>'s content to say what computer picked and that you won
+    totalScore++
+    score.innerHTML = totalScore;
 }
 
 function lose(){
-    document.getElementById('results-box').innerHTML = "comp picked " + compOptions[computerResult] + "! you lost!"; //Changes the <div>'s content to say Lose!
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you lost!"; //Changes the <div>'s content to say Lose!
 }
 
 function draw(){
-    document.getElementById('results-box').innerHTML = "comp picked " + compOptions[computerResult] + " too! you draw!"; //Changes the <div>'s content to say Draw!
+    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + " too! you draw!"; //Changes the <div>'s content to say Draw!
 }
 
 function checkResults(){
