@@ -40,19 +40,39 @@ function playerAnswer(){
     }
 }
 
-/* The above code checks the player's selection and responds
-accordingly.
+/* The above code checks the player's selection and assigns it a value
+called 'result' which is later compared to 'computerResult' to see who
+wins
 */
 
 let compOptions = ["rock", "paper", "scissors", "lizard", "spock"];
 let resultsBox = document.getElementById('results-box');
 let score = document.getElementById('score');
 let totalScore = 0;
+let difficulty = 0;
+
+function rollAgain(){
+    computerResult = Math.floor(Math.random()*5);
+    console.log("computer's reroll value: "+computerResult);
+}
+function checkDifficulty(){         //this code should let the computer reroll a number of times
+    if(difficulty == 0){            //according to the difficulty to potentially pick a 
+        win()                       //winning number
+    } else if(difficulty == 1){
+        rollAgain()
+        checkResults()
+    } else if(difficulty == 2){
+        rollAgain()
+        checkResults()
+    }
+}
+
 function win(){
     resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you win!";
     //Changes the <div>'s content to say what computer picked and that you won!
     totalScore++
     score.innerHTML = totalScore;
+    difficulty++
 }
 
 function lose(){
@@ -71,9 +91,9 @@ function checkResults(){
     }
     if(result==0){                      //if player chooses rock
         if(computerResult==2){          //if computer chooses scissors
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         } else if (computerResult==3){  //if computer chose lizard
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         } else if (computerResult==1){  //if computer chose paper
             lose();                     //player loses
         } else if (computerResult==4){  //if computer chose spock
@@ -86,16 +106,16 @@ function checkResults(){
         } else if (computerResult==3){  //if computer chose lizard
             lose();                     //player loses
         } else if (computerResult==0){  //if computer chose rock
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         } else if (computerResult==4){  //if computer chose spock
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         }
     }
     if(result==2){                      //if player chooses scissors
         if(computerResult==1){          //if computer chooses paper
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         } else if (computerResult==3){  //if computer chose lizard
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         } else if (computerResult==0){  //if computer chose rock
             lose();                     //player loses
         } else if (computerResult==4){  //if computer chose spock
@@ -106,23 +126,22 @@ function checkResults(){
         if(computerResult==2){          //if computer chooses scissors
             lose();                     //player loses
         } else if (computerResult==1){  //if computer chose paper
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         } else if (computerResult==0){  //if computer chose rock
             lose();                     //player loses
         } else if (computerResult==4){  //if computer chose spock
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         }
     }
     if(result==4){                      //if player chooses spock
         if(computerResult==2){          //if computer chooses scissors
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         } else if (computerResult==3){  //if computer chose lizard
             lose();                     //player loses
         } else if (computerResult==0){  //if computer chose rock
-            win();                      //player wins
+            checkDifficulty();                      //player wins
         } else if (computerResult==1){  //if computer chose paper
             lose();                      //player loses
         }
     }
 }
-
