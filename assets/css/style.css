@@ -86,6 +86,8 @@ input {
     color: #898989;
     border-radius: 100%;
     font-size : 90%;
+    margin: auto;
+    display: inline-block;
 }
 
 input[type='radio']:checked ~ label div {    /*modified this code: https://www.codegrepper.com/code-examples/whatever/how+to+change+color+of+a+radio+button*/
@@ -119,22 +121,7 @@ input[type='radio']:checked ~ label div {    /*modified this code: https://www.c
 #rock-label {
     margin: auto;
 }
-#paper-label {
-    margin: auto;
-    display: inline-block;
-}
-#scissors-label {
-    margin: auto;
-    display: inline-block;
-}
-#lizard-label {
-    margin: auto;
-    display: inline-block;
-}
-#spock-label {
-    margin: auto;
-    display: inline-block;
-}
+
 #stopper {
     width: max-content;
 }
@@ -157,4 +144,38 @@ input[type='radio']:checked ~ label div {    /*modified this code: https://www.c
 
 #rules-text{
     font-weight: bold;
+}
+
+/*-------------------------------------TABLET MEDIA QUERIES -------------------------------*/
+
+@media (min-width: 768px) {
+    .choice-container {
+        width: 35%;
+        height: 130px;
+    }
+    .circle {
+        height: 120px;
+        width: 120px;
+        line-height: 120px;
+        font-size: 20px;
+    }
+    #go-button{
+        font-size: 20px;
+    }
+    #results-box{
+        font-size: 20px;
+    }
+    #number-tracker{
+        font-size: 20px;
+    }
+    #rules{
+        font-size: 20px;
+    }
+}
+/*--------------------------------------- DESKTOP MEDIA QUERIES -----------------------------*/
+@media (min-width: 992px) {
+    .choice-container {
+        width: 20%;
+        height: 130px;
+    }
 }
