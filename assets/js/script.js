@@ -159,6 +159,8 @@ let scoreSpan = document.getElementById('score'); //scoreSpan gets a <span>, use
 let totalScore = 0;          //totalScore tracks total wins, used in win() function with highScore
 let currentScore= 0;
 let highScore = document.getElementById('high-score');
+let wins = 0;
+let diffDiv = document.getElementById('difficulty-tracker');
 
 function win(){
     resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you win!";
@@ -169,7 +171,17 @@ function win(){
     highScore.innerHTML = totalScore;
     currentScore++
     scoreSpan.innerHTML = currentScore;
-    difficulty++
+    wins++
+    if (wins == 3){
+        difficulty++
+        diffDiv.innerHTML = "Hard";            //This should increase the difficulty more slowly, and should
+    }                                           //be easy to modify later if desired
+    if (wins == 6){
+        difficulty++
+        diffDiv.innerHTML = "Impossible";
+    }
+    console.log(wins)
+    console.log(difficulty)
 }
 
 function lose(){
@@ -187,3 +199,15 @@ function draw(){
     //Changes the <div>'s content to say what computer picked and that you Draw!
 }
 
+// ------------------------------------ Reset Button
+
+function resetScores(event){
+    event.preventDefault();
+    currentScore = 0;
+    scoreSpan.innerHTML = 0;
+    wins = 0;
+    difficulty = 0;
+    diffDiv.innerHTML = "Normal";
+}
+let diffTracker = document.getElementById('reset-button');
+diffTracker.addEventListener('click', resetScores);
