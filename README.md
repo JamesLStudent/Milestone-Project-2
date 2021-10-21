@@ -13,3 +13,6 @@ https://stackoverflow.com/questions/1423777/how-can-i-check-whether-a-radio-butt
 code to vertically align a single line of text in a div, which I used for my choice
 buttons
 https://stackoverflow.com/questions/2939914/how-do-i-vertically-align-text-in-a-div
+
+code to change text color if the radio button is checked
+https://www.codegrepper.com/code-examples/whatever/how+to+change+color+of+a+radio+button

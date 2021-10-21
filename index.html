@@ -18,20 +18,21 @@
         <div class="game-area">
             <form id="game-form" action="" method="POST" onsubmit="roll(event)">
 
-                <div class="choice-container">
+                <div class="choice-container"> <!--Inputs need a fixed height (px) to make the text centering work, but this doesn't scale well, so I put them in a div that I could give a % height and width-->
+                    <input name="GameButton" id="rock" value="Rock" type="radio" class="input-button">
                     <label for="rock">
                         <div class="circle" id="rock-label">ROCK</div>
                     </label>
-                    <input name="GameButton" id="rock" value="Rock" type="radio" class="input-button">
                 </div>
 
-                <div id="stopper"></div>
+                <div id="stopper"></div> <!--stopper divs have max width but no height, so they don't take up space on the page but they also prevent all the game buttons lining up-->
 
                 <div class="choice-container">
+                    <input name="GameButton" id="spock" value="Spock" type="radio" class="input-button">
                     <label for="spock">
                         <div class="circle" id="spock-label">SPOCK</div>
                     </label>
-                    <input name="GameButton" id="spock" value="Spock" type="radio" class="input-button">
+
                 </div>
 
                 <label id="go-button" for="submit">Play!
@@ -39,15 +40,17 @@
                 </label>
 
                 <div class="choice-container">
+                    <input name="GameButton" id="paper" value="Paper" type="radio" class="input-button">
                     <label for="paper">
                         <div class="circle" id="paper-label">PAPER</div>
                     </label>
-                    <input name="GameButton" id="paper" value="Paper" type="radio" class="input-button">
+
                 </div>
 
                 <div id="stopper"></div>
 
                 <div class="choice-container">
+                    <input name="GameButton" id="lizard" value="Lizard" type="radio" class="input-button">
                     <label for="lizard">
                         <div class="circle" id="lizard-label">LIZARD</div>
                     </label>
@@ -55,6 +58,7 @@
                 </div>
 
                 <div class="choice-container">
+                    <input name="GameButton" id="scissors" value="Scissors" type="radio" class="input-button">
                     <label for="scissors">
                         <div class="circle" id="scissors-label">SCISSORS</div>
                     </label>
@@ -66,7 +70,7 @@
         <div id="results-box"></div>
     </main>
     <aside id="number-tracker">
-        <p>Current Score: <span id="score">0</span></p>
+        <p>Current Score: <span id="score">0</span></p> <!--these values are all changed by Js to update live-->
         <p>Highscore: <span id="high-score">0</span></p>
         <p>Difficulty: <span id="difficulty-tracker">Normal</span></p>
         <label id="reset-button" for="submit">Reset Difficulty

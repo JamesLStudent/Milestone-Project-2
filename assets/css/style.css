@@ -2,7 +2,7 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 0px;    /*these first few styles are written just to overwrite default styles*/
     line-height: 60px;
 }
 h2{
@@ -19,6 +19,7 @@ body {
 input {
     margin: auto;
 }
+
 .header {
     font-size: 2rem;
     font-weight: 700;
@@ -87,12 +88,16 @@ input {
     font-size : 90%;
 }
 
+input[type='radio']:checked ~ label div {    /*modified this code: https://www.codegrepper.com/code-examples/whatever/how+to+change+color+of+a+radio+button*/
+    color: white;                          /*gives the text associated with a button a different color when the button is checked*/
+}
+
 #go-button {
     display: inline-block;
     width: 20%;
     height: 40px;
     line-height: 40px;
-    background-color: #0E0E0E;
+    background-color: #0E0E0E;   /*this button and the one below both exist to replace a HTML button*/
     color: #FF00C3;
     border-radius: 10px;
 }
@@ -108,7 +113,7 @@ input {
 }
 
 .input-button {
-    display: none;
+    display: none;                 /*hides the default button so my replacements take its place*/
 }
 
 #rock-label {

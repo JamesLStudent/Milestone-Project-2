@@ -9,7 +9,7 @@ function roll(event){
     resultsBox.setAttribute('style', 'padding:5px')
 }
 let gameForm = document.getElementsByTagName('input');      //event listener waiting for the
-gameForm[0,1,2,3,4].addEventListener('submit', roll);       //submit button to get pressed
+gameForm[2].addEventListener('submit', roll);               //submit button to get pressed
 
 /* note that gameForm targets <input> elements instead
 of the <form>. This is because targetting the <form>
@@ -218,3 +218,8 @@ function resetScores(event){
 }
 let diffTracker = document.getElementById('reset-button');
 diffTracker.addEventListener('click', resetScores);
+
+//resetting the difficulty also resets your current score, so you can't keep
+//resetting and play on normal difficulty forever for higher win chances. 
+//It does not reset your highscore, however, so you can reset to try for better
+//luck while the game is at base difficulty, if you like.
