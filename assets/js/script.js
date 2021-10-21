@@ -6,6 +6,7 @@ function roll(event){
     computerResult = Math.floor(Math.random()*5); //Generates a number 0-4 and calls it computerResult
     console.log('computer value: '+computerResult);
     play();                               //runs the code to play the game
+    resultsBox.setAttribute('style', 'padding:5px')
 }
 let gameForm = document.getElementsByTagName('input');      //event listener waiting for the
 gameForm[0,1,2,3,4].addEventListener('submit', roll);       //submit button to get pressed
@@ -24,7 +25,7 @@ linked in the README */
 function play(){
     playerAnswer();         //determines player choice
     if (result == null){
-        alert("Please pick an option");
+        resultsBox.innerHTML = "Pick an option before pressing play!"
     } else {
     checkResults();         //checks against comp results to find win or loss
     checkDifficulty();      //lets the comp pick again if it lost and difficulty
@@ -166,10 +167,10 @@ let totalScore = 0;          //totalScore tracks total wins, used in win() funct
 let currentScore= 0;
 let highScore = document.getElementById('high-score');
 let wins = 0;
-let diffDiv = document.getElementById('difficulty-tracker');
+let diffDiv = document.getElementById("difficulty-tracker");
 
 function win(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you win!";
+    resultsBox.innerHTML = "Your opponent picked " + compOptions[computerResult] + "! You win! Congrats :)";
     //Changes the <div>'s content to say what computer picked and that you won!
     if(totalScore == currentScore){
         totalScore++
@@ -181,17 +182,17 @@ function win(){
     if (wins == 3){
         difficulty++
         diffDiv.innerHTML = "Hard";            //This should increase the difficulty more slowly, and should
-    }                                           //be easy to modify later if desired
+    }                                                                        //be easy to modify later if desired
     if (wins == 6){
         difficulty++
-        diffDiv.innerHTML = "Impossible";
+        diffDiv.innerHTML = "Impossible!";
     }
     console.log(wins)
     console.log(difficulty)
 }
 
 function lose(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + "! you lost!";
+    resultsBox.innerHTML = "Your opponent picked " + compOptions[computerResult] + "! You lost! :(";
     //Changes the <div>'s content to say what computer picked and that you Lose!
     currentScore--
     if (currentScore < 0){
@@ -201,7 +202,7 @@ function lose(){
 }
 
 function draw(){
-    resultsBox.innerHTML = "comp picked " + compOptions[computerResult] + " too! you draw!";
+    resultsBox.innerHTML = "Your opponent picked " + compOptions[computerResult] + " too! You draw!";
     //Changes the <div>'s content to say what computer picked and that you Draw!
 }
 
@@ -213,7 +214,7 @@ function resetScores(event){
     scoreSpan.innerHTML = 0;
     wins = 0;
     difficulty = 0;
-    diffDiv.innerHTML = "Normal";
+    diffDiv.innerHTML = "Normal"
 }
 let diffTracker = document.getElementById('reset-button');
 diffTracker.addEventListener('click', resetScores);

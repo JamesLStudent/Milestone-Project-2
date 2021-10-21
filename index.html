@@ -17,48 +17,72 @@
         </header>
         <div class="game-area">
             <form id="game-form" action="" method="POST" onsubmit="roll(event)">
-                <label for="rock">
-                    <div class="circle" id="rock-label">rock</div>
-                </label>
-                <input name="GameButton" id="rock" value="Rock" type="radio" class="input-button">
-                <label for="paper" id="paper-label">
-                    <div class="circle">paper</div>
-                </label>
-                <input name="GameButton" id="paper" value="Paper" type="radio" class="input-button">
-                <input type="submit" id="submit" value="Go!" required>
-                <label for="scissors">
-                    <div class="circle" id="scissors-label">scissors</div>
-                </label>
-                <input name="GameButton" id="scissors" value="Scissors" type="radio" class="input-button">
+
+                <div class="choice-container">
+                    <label for="rock">
+                        <div class="circle" id="rock-label">ROCK</div>
+                    </label>
+                    <input name="GameButton" id="rock" value="Rock" type="radio" class="input-button">
+                </div>
+
                 <div id="stopper"></div>
-                <label for="lizard">
-                    <div class="circle" id="lizard-label">lizard</div>
+
+                <div class="choice-container">
+                    <label for="spock">
+                        <div class="circle" id="spock-label">SPOCK</div>
+                    </label>
+                    <input name="GameButton" id="spock" value="Spock" type="radio" class="input-button">
+                </div>
+
+                <label id="go-button" for="submit">Play!
+                    <input type="submit" id="submit" value="Go!" class ="input-button" required>
                 </label>
-                <input name="GameButton" id="lizard" value="Lizard" type="radio" class="input-button">
-                <label for="spock">
-                    <div class="circle" id="spock-label">spock</div>
-                </label>
-                <input name="GameButton" id="spock" value="Spock" type="radio" class="input-button">
+
+                <div class="choice-container">
+                    <label for="paper">
+                        <div class="circle" id="paper-label">PAPER</div>
+                    </label>
+                    <input name="GameButton" id="paper" value="Paper" type="radio" class="input-button">
+                </div>
+
+                <div id="stopper"></div>
+
+                <div class="choice-container">
+                    <label for="lizard">
+                        <div class="circle" id="lizard-label">LIZARD</div>
+                    </label>
+                    <input name="GameButton" id="lizard" value="Lizard" type="radio" class="input-button">
+                </div>
+
+                <div class="choice-container">
+                    <label for="scissors">
+                        <div class="circle" id="scissors-label">SCISSORS</div>
+                    </label>
+                    <input name="GameButton" id="scissors" value="Scissors" type="radio" class="input-button">
+                </div>
+
             </form>
         </div>
         <div id="results-box"></div>
     </main>
     <aside id="number-tracker">
-        <p>current score:<span id="score">0</span></p>
-        <p>highscore:<span id="high-score">0</span></p>
-        <p>difficulty:<span id="difficulty-tracker">Normal</span></p>
-        <button type="button" name="reset-button" id="reset-button">Reset difficulty</button>
+        <p>Current Score: <span id="score">0</span></p>
+        <p>Highscore: <span id="high-score">0</span></p>
+        <p>Difficulty: <span id="difficulty-tracker">Normal</span></p>
+        <label id="reset-button" for="submit">Reset Difficulty
+            <button type="button" name="reset-button" class="input-button"></button>
+        </label>
     </aside>
     <section id="rules">
-        <h2>RULES:</h2>
-        <p>
+        <h2>RULES</h2>
+        <p id="rules-text">
             Rock beats Scissors and Lizard<br>
             Paper beats Rock and Spock<br>
             Scissors beats Paper and Lizard<br>
             Lizard beats Spock and Paper<br>
             Spock beats Scissors and Rock<br>
             <br>
-            Pick your favourite and hit Go to play!
+            Pick your favourite and hit play!
         </p>
     </section>
     <script src="assets/js/script.js"></script>
