@@ -6,7 +6,7 @@ function roll(event){
     computerResult = Math.floor(Math.random()*5); //Generates a number 0-4 and calls it computerResult
     console.log('computer value: '+computerResult);
     play();                               //runs the code to play the game
-    resultsBox.setAttribute('style', 'padding:5px')
+    resultsBox.setAttribute('style', 'padding:5px');
 }
 let gameForm = document.getElementsByTagName('input');      //event listener waiting for the
 gameForm[2].addEventListener('submit', roll);               //submit button to get pressed
@@ -25,7 +25,7 @@ linked in the README */
 function play(){
     playerAnswer();         //determines player choice
     if (result == null){
-        resultsBox.innerHTML = "Pick an option before pressing play!"
+        resultsBox.innerHTML = "Pick an option before pressing play!";
     } else {
     checkResults();         //checks against comp results to find win or loss
     checkDifficulty();      //lets the comp pick again if it lost and difficulty
@@ -173,28 +173,28 @@ function win(){
     resultsBox.innerHTML = "Your opponent picked " + compOptions[computerResult] + "! You win! Congrats :)";
     //Changes the <div>'s content to say what computer picked and that you won!
     if(totalScore == currentScore){
-        totalScore++
+        totalScore++;
     }
     highScore.innerHTML = totalScore;
-    currentScore++
+    currentScore++;
     scoreSpan.innerHTML = currentScore;
-    wins++
+    wins++;
     if (wins == 3){
-        difficulty++
+        difficulty++;
         diffDiv.innerHTML = "Hard";            //This should increase the difficulty more slowly, and should
     }                                                                        //be easy to modify later if desired
     if (wins == 6){
-        difficulty++
+        difficulty++;
         diffDiv.innerHTML = "Impossible!";
     }
-    console.log(wins)
-    console.log(difficulty)
+    console.log(wins);
+    console.log(difficulty);
 }
 
 function lose(){
     resultsBox.innerHTML = "Your opponent picked " + compOptions[computerResult] + "! You lost! :(";
     //Changes the <div>'s content to say what computer picked and that you Lose!
-    currentScore--
+    currentScore--;
     if (currentScore < 0){
         currentScore = 0;
     }
@@ -214,7 +214,7 @@ function resetScores(event){
     scoreSpan.innerHTML = 0;
     wins = 0;
     difficulty = 0;
-    diffDiv.innerHTML = "Normal"
+    diffDiv.innerHTML = "Normal";
 }
 let diffTracker = document.getElementById('reset-button');
 diffTracker.addEventListener('click', resetScores);

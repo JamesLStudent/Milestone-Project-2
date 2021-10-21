@@ -16,16 +16,16 @@
             <h1>RPSLS Game</h1>
         </header>
         <div class="game-area">
-            <form id="game-form" action="" method="POST" onsubmit="roll(event)">
+            <form id="game-form" method="POST" onsubmit="roll(event)">
 
                 <div class="choice-container"> <!--Inputs need a fixed height (px) to make the text centering work, but this doesn't scale well, so I put them in a div that I could give a % height and width-->
                     <input name="GameButton" id="rock" value="Rock" type="radio" class="input-button">
                     <label for="rock">
-                        <div class="circle" id="rock-label">ROCK</div>
-                    </label>
-                </div>
-
-                <div id="stopper"></div> <!--stopper divs have max width but no height, so they don't take up space on the page but they also prevent all the game buttons lining up-->
+                        <div class="circle" id="rock-label">ROCK</div> <!--Note that a div is conidered flow content, and should not be used as a child of a label, which-->
+                    </label>                                           <!--is considered phrasing content. This will cause it to fail a validator, but I think it's worth-->
+                </div>                                                 <!--noting that I'm only using the label because it mirrors the button I'm hiding, and the-->
+                                                                       <!--div is used in place of the button, so it is effectively harmless as far as I can tell-->
+                <div class="stopper"></div> <!--stopper divs have max width but no height, so they don't take up space on the page but they also prevent all the game buttons lining up-->
 
                 <div class="choice-container">
                     <input name="GameButton" id="spock" value="Spock" type="radio" class="input-button">
@@ -36,7 +36,7 @@
                 </div>
 
                 <label id="go-button" for="submit">Play!
-                    <input type="submit" id="submit" value="Go!" class ="input-button" required>
+                    <input type="submit" id="submit" value="Go!" class ="input-button">
                 </label>
 
                 <div class="choice-container">
@@ -47,14 +47,13 @@
 
                 </div>
 
-                <div id="stopper"></div>
+                <div class="stopper"></div>
 
                 <div class="choice-container">
                     <input name="GameButton" id="lizard" value="Lizard" type="radio" class="input-button">
                     <label for="lizard">
                         <div class="circle" id="lizard-label">LIZARD</div>
                     </label>
-                    <input name="GameButton" id="lizard" value="Lizard" type="radio" class="input-button">
                 </div>
 
                 <div class="choice-container">
@@ -62,7 +61,6 @@
                     <label for="scissors">
                         <div class="circle" id="scissors-label">SCISSORS</div>
                     </label>
-                    <input name="GameButton" id="scissors" value="Scissors" type="radio" class="input-button">
                 </div>
 
             </form>
@@ -73,8 +71,8 @@
         <p>Current Score: <span id="score">0</span></p> <!--these values are all changed by Js to update live-->
         <p>Highscore: <span id="high-score">0</span></p>
         <p>Difficulty: <span id="difficulty-tracker">Normal</span></p>
-        <label id="reset-button" for="submit">Reset Difficulty
-            <button type="button" name="reset-button" class="input-button"></button>
+        <label id="reset-button" for="resetter">Reset Difficulty
+            <button type="button" id="resetter" name="reset-button" class="input-button"></button>
         </label>
     </aside>
     <section id="rules">
