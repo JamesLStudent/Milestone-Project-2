@@ -78,3 +78,30 @@ input {
     color: white;
     border-radius: 100%;
 }
+
+.input-button {
+    display: none;
+}
+
+#rock-label {
+    margin: auto;
+}
+#paper-label {
+    margin: auto;
+    display: inline-block;
+}
+#scissors-label {
+    margin: auto;
+    display: inline-block;
+}
+#lizard-label {
+    margin: auto;
+    display: inline-block;
+}
+#spock-label {
+    margin: auto;
+    display: inline-block;
+}
+#stopper {
+    width: max-content;
+}

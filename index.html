@@ -17,17 +17,28 @@
         </header>
         <div class="game-area">
             <form id="game-form" action="" method="POST" onsubmit="roll(event)">
-                <label for="rock"><div class="circle">rock</div></label>
-                <input name="GameButton" id="rock" value="Rock" type="radio">
-                <label for="paper"><div class="circle">paper</div></label>
-                <input name="GameButton" id="paper" value="Paper" type="radio">
-                <label for="scissors"><div class="circle">scissors</div></label>
-                <input name="GameButton" id="scissors" value="Scissors" type="radio">
-                <label for="lizard"><div class="circle">lizard</div></label>
-                <input name="GameButton" id="lizard" value="Lizard" type="radio">
-                <label for="spock"><div class="circle">spock</div></label>
-                <input name="GameButton" id="spock" value="Spock" type="radio">
+                <label for="rock">
+                    <div class="circle" id="rock-label">rock</div>
+                </label>
+                <input name="GameButton" id="rock" value="Rock" type="radio" class="input-button">
+                <label for="paper" id="paper-label">
+                    <div class="circle">paper</div>
+                </label>
+                <input name="GameButton" id="paper" value="Paper" type="radio" class="input-button">
                 <input type="submit" id="submit" value="Go!" required>
+                <label for="scissors">
+                    <div class="circle" id="scissors-label">scissors</div>
+                </label>
+                <input name="GameButton" id="scissors" value="Scissors" type="radio" class="input-button">
+                <div id="stopper"></div>
+                <label for="lizard">
+                    <div class="circle" id="lizard-label">lizard</div>
+                </label>
+                <input name="GameButton" id="lizard" value="Lizard" type="radio" class="input-button">
+                <label for="spock">
+                    <div class="circle" id="spock-label">spock</div>
+                </label>
+                <input name="GameButton" id="spock" value="Spock" type="radio" class="input-button">
             </form>
         </div>
         <div id="results-box"></div>
