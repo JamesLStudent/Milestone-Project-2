@@ -23,11 +23,16 @@ linked in the README */
 
 function play(){
     playerAnswer();         //determines player choice
+    if (result == null){
+        alert("Please pick an option");
+    } else {
     checkResults();         //checks against comp results to find win or loss
-    checkDifficulty();      //lets the comp pick again if it lost and difficulty is >0
+    checkDifficulty();      //lets the comp pick again if it lost and difficulty
+    }                       // is >0, and also runs the win/lose/draw functions
 }
 
-let result = "";
+let result = null;
+
 function playerAnswer(){
     if(document.getElementById('rock').checked) {
         result = 0;
@@ -47,6 +52,7 @@ function playerAnswer(){
     }
 }
 
+let winLose = null;                           //winLose is used with whoWins and checkResults
 function checkResults(){
     if(result==0){                          //if player chooses rock
         if(computerResult==2){              //if comp chooses scissors
@@ -60,14 +66,14 @@ function checkResults(){
         }
     }
     if(result==1){                          //if player chooses paper
-        if(computerResult==2){              //if comp chooses scissors
-            winLose=1;
-        } else if (computerResult==3){      //if comp chooses lizard
-            winLose=1;
-        } else if (computerResult==0){      //if comp chooses rock
+        if (computerResult==0){      //if comp chooses rock
             winLose=0;
         } else if (computerResult==4){      //if comp chooses spock
             winLose=0;
+        } else if(computerResult==2){              //if comp chooses scissors
+            winLose=1;
+        } else if (computerResult==3){      //if comp chooses lizard
+            winLose=1;
         }
     }
     if(result==2){                      //if player chooses scissors
@@ -76,39 +82,40 @@ function checkResults(){
         } else if (computerResult==3){  //if comp chooses lizard
             winLose=0;
         } else if (computerResult==0){  //if comp chooses rock
-            winlose=1;
+            winLose=1;
         } else if (computerResult==4){  //if comp chooses spock
             winLose=1;
         }
     }
     if(result==3){                      //if player chooses lizard
-        if(computerResult==2){          //if comp chooses scissors
-            winlose=1;
-        } else if (computerResult==1){  //if comp chooses paper
+        if (computerResult==1){         //if comp chooses paper
             winLose=0;
-        } else if (computerResult==0){  //if comp chooses rock
-            winlose=1;
         } else if (computerResult==4){  //if comp chooses spock
             winLose=0;
+        } else if(computerResult==2){   //if comp chooses scissors
+            winLose=1;
+        } else if (computerResult==0){  //if comp chooses rock
+            winLose=1;
         }
     }
     if(result==4){                      //if player chooses spock
         if(computerResult==2){          //if comp chooses scissors
             winLose=0;
-        } else if (computerResult==3){  //if comp chooses lizard
-            winlose=1;
         } else if (computerResult==0){  //if comp chooses rock
             winLose=0;
         } else if (computerResult==1){  //if comp chooses paper
+            winLose=1;
+        } else if (computerResult==3){  //if comp chooses lizard
             winLose=1;
         }
     }
 }
 
 let difficulty = 0;
-function checkDifficulty(){         //this code should let the computer reroll if it loses
-    if(difficulty == 0){            //a number of times according to the difficulty to  
-            whoWins();              //potentially pick a winning number
+function checkDifficulty(){
+    if(difficulty == 0){            //this code should let the computer reroll on a loss
+        checkResults();             //a number of times according to the difficulty to  
+        whoWins();                  //potentially turn a loss into a win
     } else if(difficulty == 1){
         if(winLose == 0){
             rollAgain();
@@ -128,7 +135,6 @@ function checkDifficulty(){         //this code should let the computer reroll i
     }
 }
 
-let winLose = "";                     //winLose is used with the whoWins and checkResults
 function whoWins(){                   //function to determine whether the player  or
 	if (result == computerResult){    //computer won the game
 		draw();
