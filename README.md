@@ -9,3 +9,7 @@ https://stackoverflow.com/questions/36461855/javascript-click-event-firing-twice
 
 code to check which radiobutton is selected in Js
 https://stackoverflow.com/questions/1423777/how-can-i-check-whether-a-radio-button-is-selected-with-javascript
+
+code to vertically align a single line of text in a div, which I used for my choice
+buttons
+https://stackoverflow.com/questions/2939914/how-do-i-vertically-align-text-in-a-div
