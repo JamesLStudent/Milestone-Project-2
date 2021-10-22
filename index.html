@@ -20,17 +20,17 @@
 
                 <div class="choice-container"> <!--Inputs need a fixed height (px) to make the text centering work, but this doesn't scale well, so I put them in a div that I could give a % height and width-->
                     <input name="GameButton" id="rock" value="Rock" type="radio" class="input-button">
-                    <label for="rock">
-                        <div class="circle" id="rock-label">ROCK</div> <!--Note that a div is conidered flow content, and should not be used as a child of a label, which-->
-                    </label>                                           <!--is considered phrasing content. This will cause it to fail a validator, but I think it's worth-->
-                </div>                                                 <!--noting that I'm only using the label because it mirrors the button I'm hiding, and the-->
-                                                                       <!--div is used in place of the button, so it is effectively harmless as far as I can tell-->
+                    <label for="rock" class="circle" id="rock-label">
+                        ROCK
+                    </label>
+                </div>
+
                 <div class="stopper"></div> <!--stopper divs have max width but no height, so they don't take up space on the page but they also prevent all the game buttons lining up-->
 
                 <div class="choice-container">
                     <input name="GameButton" id="spock" value="Spock" type="radio" class="input-button">
-                    <label for="spock">
-                        <div class="circle" id="spock-label">SPOCK</div>
+                    <label for="spock" class="circle" id="spock-label">
+                        SPOCK
                     </label>
 
                 </div>
@@ -41,8 +41,8 @@
 
                 <div class="choice-container">
                     <input name="GameButton" id="paper" value="Paper" type="radio" class="input-button">
-                    <label for="paper">
-                        <div class="circle" id="paper-label">PAPER</div>
+                    <label for="paper" class="circle" id="paper-label">
+                        PAPER
                     </label>
 
                 </div>
@@ -51,15 +51,15 @@
 
                 <div class="choice-container">
                     <input name="GameButton" id="lizard" value="Lizard" type="radio" class="input-button">
-                    <label for="lizard">
-                        <div class="circle" id="lizard-label">LIZARD</div>
+                    <label for="lizard" class="circle" id="lizard-label">
+                        LIZARD
                     </label>
                 </div>
 
                 <div class="choice-container">
                     <input name="GameButton" id="scissors" value="Scissors" type="radio" class="input-button">
-                    <label for="scissors">
-                        <div class="circle" id="scissors-label">SCISSORS</div>
+                    <label for="scissors" class="circle" id="scissors-label">
+                        SCISSORS
                     </label>
                 </div>
 

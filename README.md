@@ -16,3 +16,12 @@ https://stackoverflow.com/questions/2939914/how-do-i-vertically-align-text-in-a-
 
 code to change text color if the radio button is checked
 https://www.codegrepper.com/code-examples/whatever/how+to+change+color+of+a+radio+button
+
+JavaScript validator
+https://beautifytools.com/javascript-validator.php
+
+CSS validator
+https://jigsaw.w3.org/css-validator/validator
+
+HTML validator
+https://validator.w3.org/
