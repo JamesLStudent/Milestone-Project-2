@@ -90,7 +90,7 @@ input {
     display: inline-block;
 }
 
-input[type='radio']:checked ~ label div {    /*modified this code: https://www.codegrepper.com/code-examples/whatever/how+to+change+color+of+a+radio+button*/
+input[type='radio']:checked ~ label {    /*modified this code: https://www.codegrepper.com/code-examples/whatever/how+to+change+color+of+a+radio+button*/
     color: white;                          /*gives the text associated with a button a different color when the button is checked*/
 }
 
