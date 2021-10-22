@@ -8,13 +8,13 @@ RPSLS is a browser game that hopes to allow the user to play a game of Rock, Pap
 
 First and foremost, RSPLS features the ability to play a guessing against the computer which increases in difficulty as you win - first at 3 wins and again at 6. 
 
-<img src="https://imgur.com/a/a1W405d">
+<img src="assets/images/RPSLS-Desktop-game.JPG">
 
 ### Score tracking
 
 Along with the game itself, the script will track your current score, which will go up by 1 for a win and down by 1 for a loss. It will also track your highest score and the difficulty setting, which will either be Normal, Hard, or Impossible,depending on your number of wins.
 
-<img src="https://imgur.com/a/MMAT1DR">
+<img src="assets/images/RPSLS-score.JPG">
 
 ### Screen size compatability
 
@@ -37,7 +37,7 @@ https://www.codegrepper.com/code-examples/whatever/how+to+change+color+of+a+radi
 ## Testing
 
 I kept a diary of sorts as I wrote the code for this website, available in diary.md. I wasn't intending to share it here but now believe it could be useful to see the steps I took to test, diagnose, and fix certain bugs. It's worth noting that I may not always detail my fix in the diary, but any bug I wrote about in there, I did fix.
-diary: <a href="diary.md">
+diary: <a href="diary.md">Click here</a>
 
 I tested inputs by selecting each choice and pressing play a number of times. This led me to discover that certain choices would win when they should not, e.g Spock winning against Lizard. At first, I believed this to be a problem with the function that declared the winner, but I later discovered a spelling error in some if()s, and was very relieved that it was a stupid error on my part and nothing more complicated.
 
