@@ -54,6 +54,15 @@ https://jigsaw.w3.org/css-validator/validator
 HTML validator produces no errors
 https://validator.w3.org/
 
+## Deployment
+
+The site was deployed to GitHub pages. The steps I took to do this were:
+1. In the GitHub repository page, click settings in the upper right
+2. Scroll down to Pages and open the link
+3. select the main branch in thr dropdown and click save
+4. the page will refresh and the link to the deployed project will be available
+The live link can be found here - https://jameslstudent.github.io/Milestone-Project-2/
+
 ## What I'd do better
 
 I am not happy with the vast if/else statements I had to write to check the player's input against the computer's. In fact, I did look around to see if there were better ways to do this, and did indeed find some much more efficient code, but I did not fully understand it and did not want to implement something I would not be able to maintain. Further, because this is an assessed project, I wanted the majority of the code written in it to be my own - after all, I'm demonstrating my abiity, not a user on Stack Overflow. However, if this were not an assessed project, I likely would have used their code, because I understand that reinventing the wheel is something to be avoided where possible. In future, I'd like to break the code they used down into pieces I could understand, so that I can make use of it myself.
