@@ -37,7 +37,7 @@ https://www.codegrepper.com/code-examples/whatever/how+to+change+color+of+a+radi
 ## Testing
 
 I kept a diary of sorts as I wrote the code for this website, available in diary.md. I wasn't intending to share it here but now believe it could be useful to see the steps I took to test, diagnose, and fix certain bugs. It's worth noting that I may not always detail my fix in the diary, but any bug I wrote about in there, I did fix.
-diary: <a href="diary.md">Click here</a>
+diary: <a href="diary.md" about="_blank">Click here</a>
 
 I tested inputs by selecting each choice and pressing play a number of times. This led me to discover that certain choices would win when they should not, e.g Spock winning against Lizard. At first, I believed this to be a problem with the function that declared the winner, but I later discovered a spelling error in some if()s, and was very relieved that it was a stupid error on my part and nothing more complicated.
 
@@ -46,13 +46,15 @@ I tested pressing play when no value is submitted, and found that the computer w
 I tested resetting the difficulty at various points a number of times to see if it would let me keep my current score or change something in a way I wasn't expecting, though it never did. 
 
 JavaScript validator produces no errors
-https://beautifytools.com/javascript-validator.php
+<a href="https://beautifytools.com/javascript-validator.php" about="_blank">beautifytools.com/javascript-validator</a>
 
 CSS validator produces no errors
-https://jigsaw.w3.org/css-validator/validator
+<a href="https://jigsaw.w3.org/css-validator/validator" about="_blank">jigsaw.w3.org/css-validator</a>
+
 
 HTML validator produces no errors
-https://validator.w3.org/
+<a href="https://validator.w3.org/" about="_blank">validator.w3.org</a>
+
 
 ## Deployment
 
