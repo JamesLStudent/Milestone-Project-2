@@ -61,7 +61,7 @@ The site was deployed to GitHub pages. The steps I took to do this were:
 2. Scroll down to Pages and open the link
 3. select the main branch in thr dropdown and click save
 4. the page will refresh and the link to the deployed project will be available
-The live link can be found here - <a href="https://jameslstudent.github.io/Milestone-Project-2/" _blank>Click me</a>
+The live link can be found here - <a href="https://jameslstudent.github.io/Milestone-Project-2/" target="_blank">Click me</a>
 
 ## What I'd do better
 
